@@ -14,8 +14,9 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container pb-5">
       <div class="row justify-content-center pt-5">
+        <h2 class="text-center"><b>#Hashtag Converter</b></h2>
         <textarea id="text" style="width: 400px; height: 200px"></textarea>
         <div class="d-flex justify-content-center">
           <button id="button" class="btn btn-primary mt-3" style="width: 160px">
@@ -29,7 +30,7 @@
           class="col-6 d-flex flex-column align-items-center justify-content-center"
         >
           <div class="d-flex pb-3">
-            <h3 class="text-center me-3">For POD</h3>
+            <h4 class="text-center me-3">For POD</h4>
             <div>
               <button
                 id="copyButtonPod"
@@ -41,14 +42,14 @@
             </div>
           </div>
           <textarea
-          disabled
+            disabled
             id="rootPod"
             style="
               border: none;
               resize: none;
               width: 400px;
               height: 200px;
-              border: 1px solid rgba(0, 0, 0, .2);
+              border: 1px solid rgba(0, 0, 0, 0.2);
             "
             cols="30"
             rows="10"
@@ -58,7 +59,7 @@
           class="col-6 d-flex flex-column align-items-center justify-content-center"
         >
           <div class="d-flex pb-3">
-            <h3 class="text-center me-3">For Social Media</h3>
+            <h4 class="text-center me-3">For Social Media</h4>
             <div>
               <button
                 id="copyButtonSocial"
@@ -70,70 +71,145 @@
             </div>
           </div>
           <textarea
-          disabled
+            disabled
             id="rootSocial"
             style="
               border: none;
               resize: none;
               width: 400px;
               height: 200px;
-              border: 1px solid rgba(0, 0, 0, .2);
+              border: 1px solid rgba(0, 0, 0, 0.2);
             "
             cols="30"
             rows="10"
           ></textarea>
         </div>
       </div>
+
+      <div class="row pt-5">
+        <div
+          class="col-6 d-flex flex-column align-items-center justify-content-center"
+        >
+          <div class="d-flex pb-3">
+            <h4 class="text-center me-3">For POD first 30</h4>
+            <div>
+              <button
+                id="copyButtonPod"
+                class="btn btn-success"
+                style="width: 80px; height: 40px"
+              >
+                copy
+              </button>
+            </div>
+          </div>
+          <textarea
+            disabled
+            id="rootPodFirst"
+            style="
+              border: none;
+              resize: none;
+              width: 400px;
+              height: 200px;
+              border: 1px solid rgba(0, 0, 0, 0.2);
+            "
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+        <div
+          class="col-6 d-flex flex-column align-items-center justify-content-center"
+        >
+          <div class="d-flex pb-3">
+            <h4 class="text-center me-3">For 30 first Social Media</h4>
+            <div>
+              <button
+                id="copyButtonSocial"
+                class="btn btn-success"
+                style="width: 80px; height: 40px"
+              >
+                copy
+              </button>
+            </div>
+          </div>
+          <textarea
+            disabled
+            id="rootSocialFirst"
+            style="
+              border: none;
+              resize: none;
+              width: 400px;
+              height: 200px;
+              border: 1px solid rgba(0, 0, 0, 0.2);
+            "
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="row pt-5">
+        <div
+          class="col-6 d-flex flex-column align-items-center justify-content-center"
+        >
+          <div class="d-flex pb-3">
+            <h4 class="text-center me-3">For POD random 30</h4>
+            <div>
+              <button
+                id="copyButtonPod"
+                class="btn btn-success"
+                style="width: 80px; height: 40px"
+              >
+                copy
+              </button>
+            </div>
+          </div>
+          <textarea
+            disabled
+            id="rootPodRandom"
+            style="
+              border: none;
+              resize: none;
+              width: 400px;
+              height: 200px;
+              border: 1px solid rgba(0, 0, 0, 0.2);
+            "
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+        <div
+          class="col-6 d-flex flex-column align-items-center justify-content-center"
+        >
+          <div class="d-flex pb-3">
+            <h4 class="text-center me-3">For Social Media random 30</h4>
+            <div>
+              <button
+                id="copyButtonSocial"
+                class="btn btn-success"
+                style="width: 80px; height: 40px"
+              >
+                copy
+              </button>
+            </div>
+          </div>
+          <textarea
+            disabled
+            id="rootSocialRandom"
+            style="
+              border: none;
+              resize: none;
+              width: 400px;
+              height: 200px;
+              border: 1px solid rgba(0, 0, 0, 0.2);
+            "
+            cols="30"
+            rows="10"
+          ></textarea>
+        </div>
+      </div>
+
     </div>
 
-    <script>
-      const text = document.getElementById("text");
-      const button = document.getElementById("button");
-
-      let rootPod = document.getElementById("rootPod");
-      const copyButtonPod = document.getElementById("copyButtonPod");
-
-      let rootSocilal = document.getElementById("rootSocilal");
-      const copyButtonSocial = document.getElementById("copyButtonSocial");
-
-      const translateTextPod = () => {
-        let strings = text.value;
-
-        strings = strings.replace(/\s/g, "");
-
-        strings = Array.from(new Set(strings.split("#"))).toString();
-
-        strings = strings.substring(1);
-
-        rootPod.innerText = strings;
-      };
-
-      const copyTheTextPod = () => {
-        navigator.clipboard.writeText(rootPod.value);
-      };
-
-      const translateTextSocial = () => {
-        let strings = text.value;
-
-        strings = strings.replace(/\s/g, "");
-
-        strings = Array.from(new Set(strings.split("#"))).toString();
-
-        strings = strings.replaceAll(",", " #");
-        strings = strings.substring(1);
-
-        rootSocial.innerText = strings;
-      };
-
-      const copyTheTextSocial = () => {
-        navigator.clipboard.writeText(rootPod.value);
-      };
-
-      button.addEventListener("click", translateTextPod);
-      copyButtonPod.addEventListener("click", copyTheTextPod);
-
-      button.addEventListener("click", translateTextSocial);
-      copyButtonPod.addEventListener("click", copyTheTextSocial);
-    </script>
+    <script src="scrip.js"></script>
   </body>
 </html>
