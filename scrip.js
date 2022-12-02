@@ -14,7 +14,9 @@ let rootSocialFirst = document.getElementById("rootSocialFirst");
 let rootSocialRandom = document.getElementById("rootSocialRandom");
 const copyButtonSocial = document.getElementById("copyButtonSocial");
 const copyButtonSocialFirst = document.getElementById("copyButtonSocialFirst");
-const copyButtonSocialRandom = document.getElementById("copyButtonSocialRandom");
+const copyButtonSocialRandom = document.getElementById(
+  "copyButtonSocialRandom"
+);
 
 const translateTextPod = () => {
   let strings = text.value;
@@ -46,6 +48,7 @@ const translateTextPod = () => {
 };
 
 const copyTheTextPod = () => {
+  console.log(rootPod.value);
   navigator.clipboard.writeText(rootPod.value);
 };
 const copyTheTextPodFirst = () => {
@@ -105,6 +108,6 @@ copyButtonPodFirst.addEventListener("click", copyTheTextPodFirst);
 copyButtonPodRandom.addEventListener("click", copyTheTextPodRandom);
 
 button.addEventListener("click", translateTextSocial);
-copyButtonPod.addEventListener("click", copyTheTextSocial);
+copyButtonSocial.addEventListener("click", copyTheTextSocial);
 copyButtonSocialFirst.addEventListener("click", copyTheTextSocialFirst);
 copyButtonSocialRandom.addEventListener("click", copyTheTextSocialRandom);
