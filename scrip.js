@@ -48,7 +48,6 @@ const translateTextPod = () => {
 };
 
 const copyTheTextPod = () => {
-  console.log(rootPod.value);
   navigator.clipboard.writeText(rootPod.value);
 };
 const copyTheTextPodFirst = () => {
