@@ -6,11 +6,15 @@ let rootPod = document.getElementById("rootPod");
 let rootPodFirst = document.getElementById("rootPodFirst");
 let rootPodRandom = document.getElementById("rootPodRandom");
 const copyButtonPod = document.getElementById("copyButtonPod");
+const copyButtonPodFirst = document.getElementById("copyButtonPodFirst");
+const copyButtonPodRandom = document.getElementById("copyButtonPodRandom");
 
 let rootSocial = document.getElementById("rootSocial");
 let rootSocialFirst = document.getElementById("rootSocialFirst");
 let rootSocialRandom = document.getElementById("rootSocialRandom");
 const copyButtonSocial = document.getElementById("copyButtonSocial");
+const copyButtonSocialFirst = document.getElementById("copyButtonSocialFirst");
+const copyButtonSocialRandom = document.getElementById("copyButtonSocialRandom");
 
 const translateTextPod = () => {
   let strings = text.value;
@@ -43,6 +47,12 @@ const translateTextPod = () => {
 
 const copyTheTextPod = () => {
   navigator.clipboard.writeText(rootPod.value);
+};
+const copyTheTextPodFirst = () => {
+  navigator.clipboard.writeText(rootPodFirst.value);
+};
+const copyTheTextPodRandom = () => {
+  navigator.clipboard.writeText(rootPodRandom.value);
 };
 
 const translateTextSocial = () => {
@@ -80,11 +90,21 @@ const translateTextSocial = () => {
 };
 
 const copyTheTextSocial = () => {
-  navigator.clipboard.writeText(rootPod.value);
+  navigator.clipboard.writeText(rootSocial.value);
+};
+const copyTheTextSocialFirst = () => {
+  navigator.clipboard.writeText(rootSocialFirst.value);
+};
+const copyTheTextSocialRandom = () => {
+  navigator.clipboard.writeText(rootSocialRandom.value);
 };
 
 button.addEventListener("click", translateTextPod);
 copyButtonPod.addEventListener("click", copyTheTextPod);
+copyButtonPodFirst.addEventListener("click", copyTheTextPodFirst);
+copyButtonPodRandom.addEventListener("click", copyTheTextPodRandom);
 
 button.addEventListener("click", translateTextSocial);
 copyButtonPod.addEventListener("click", copyTheTextSocial);
+copyButtonSocialFirst.addEventListener("click", copyTheTextSocialFirst);
+copyButtonSocialRandom.addEventListener("click", copyTheTextSocialRandom);
